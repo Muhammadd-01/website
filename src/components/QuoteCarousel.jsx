@@ -84,10 +84,7 @@ export default function QuoteCarousel() {
                 className="absolute w-full text-center px-4"
               >
                 <p className="font-display text-3xl md:text-5xl text-white mb-6 leading-relaxed">
-                  {'"' + loveQuotes[currentIndex].text + '"'}
-                </p>
-                <p className="font-script text-xl md:text-3xl text-sky-blue/80">
-                  - {loveQuotes[currentIndex].author}
+                  {'"' + loveQuotes[currentIndex] + '"'}
                 </p>
               </motion.div>
             </AnimatePresence>
