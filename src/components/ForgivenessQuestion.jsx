@@ -52,7 +52,12 @@ export default function ForgivenessQuestion() {
               <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 relative min-h-[60px]">
                 {/* YES Button */}
                 <motion.button
-                  onClick={() => setAccepted(true)}
+                  onClick={() => {
+                    setAccepted(true);
+                    setTimeout(() => {
+                      window.open('https://wa.me/923160212457?text=I%20forgive%20you%20%E2%9D%A4%EF%B8%8F', '_blank');
+                    }, 1500);
+                  }}
                   className="btn-primary btn-shimmer px-8 py-4 rounded-full font-body text-lg flex items-center gap-2 group relative z-20 shadow-[0_0_20px_rgba(37,99,235,0.4)]"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
