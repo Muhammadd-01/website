@@ -15,7 +15,7 @@ const LoveLetter = () => {
   };
 
   return (
-    <section id="letter" className="relative py-32 px-4 bg-deep-navy overflow-hidden">
+    <section id="letter" className="relative py-32 px-4 bg-white/10 backdrop-blur-xl backdrop-blur-3xl border-t border-sky-blue/10 overflow-hidden">
       {/* Decorative background */}
       <div className="absolute inset-0 opacity-10 bg-grid-pattern pointer-events-none" />
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-sky-blue/30 to-transparent" />
@@ -71,7 +71,7 @@ const LoveLetter = () => {
           ) : (
             <motion.div
               key="letter-content"
-              className="relative bg-white/5 backdrop-blur-md rounded-2xl border border-sky-blue/20 shadow-2xl p-8 md:p-12 overflow-hidden"
+              className="relative bg-white/10 backdrop-blur-xl backdrop-blur-md rounded-2xl border border-sky-blue/20 shadow-2xl p-8 md:p-12 overflow-hidden"
               initial={{ opacity: 0, y: 50, height: 200 }}
               animate={{ opacity: 1, y: 0, height: 'auto' }}
               transition={{ duration: 1, type: "spring", bounce: 0.2 }}

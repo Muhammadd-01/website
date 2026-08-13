@@ -19,7 +19,7 @@ export default function ForgivenessQuestion() {
   const heartsArray = Array.from({ length: 20 })
 
   return (
-    <section className="relative py-32 px-4 bg-midnight overflow-hidden min-h-[60vh] flex items-center justify-center">
+    <section className="relative py-32 px-4 bg-transparent overflow-hidden min-h-[60vh] flex items-center justify-center">
       {/* Background radial glow */}
       <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
         <div className="w-[500px] h-[500px] bg-sky-blue/30 rounded-full blur-[100px]" />
@@ -30,7 +30,7 @@ export default function ForgivenessQuestion() {
           {!accepted ? (
             <motion.div
               key="question-box"
-              className="bg-white/5 backdrop-blur-xl border border-sky-blue/30 rounded-3xl p-8 md:p-12 shadow-2xl relative"
+              className="bg-white/10 backdrop-blur-xl backdrop-blur-xl border border-sky-blue/30 rounded-3xl p-8 md:p-12 shadow-2xl relative"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -38,7 +38,7 @@ export default function ForgivenessQuestion() {
               transition={{ duration: 0.6 }}
             >
               {/* Crown Decoration */}
-              <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-midnight p-3 rounded-full border border-sky-blue/30 shadow-[0_0_20px_rgba(96,165,250,0.4)]">
+              <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-transparent p-3 rounded-full border border-sky-blue/30 shadow-[0_0_20px_rgba(96,165,250,0.4)]">
                 <Crown className="w-8 h-8 text-sky-blue" fill="currentColor" />
               </div>
 

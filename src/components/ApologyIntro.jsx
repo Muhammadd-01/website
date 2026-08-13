@@ -5,7 +5,7 @@ const ApologyIntro = () => {
   const headingChars = introContent.heading.split('');
 
   return (
-    <section className="relative py-32 px-4 bg-midnight overflow-hidden">
+    <section className="relative py-32 px-4 bg-transparent overflow-hidden">
       {/* Subtle radial gradient glow */}
       <div className="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">
         <div className="w-[800px] h-[800px] bg-royal-blue rounded-full blur-[120px]" />

@@ -11,7 +11,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-midnight">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent">
       {/* Background with breathing effect */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-br from-deep-navy via-midnight to-deep-blue"

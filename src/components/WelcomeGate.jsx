@@ -19,7 +19,7 @@ export default function WelcomeGate({ onEnter }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-midnight overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-transparent overflow-hidden">
       {/* Animated gradient background */}
       <div 
         className="absolute inset-0 opacity-40"
@@ -55,7 +55,7 @@ export default function WelcomeGate({ onEnter }) {
       ))}
 
       <motion.div 
-        className="relative z-10 w-full max-w-md px-6 py-12 flex flex-col items-center bg-white/5 backdrop-blur-xl rounded-3xl border border-sky-blue/20 shadow-2xl"
+        className="relative z-10 w-full max-w-md px-6 py-12 flex flex-col items-center bg-white/10 backdrop-blur-xl backdrop-blur-xl rounded-3xl border border-sky-blue/20 shadow-2xl"
         initial="hidden"
         animate="visible"
         variants={{
@@ -124,7 +124,7 @@ export default function WelcomeGate({ onEnter }) {
             <input
               type="password"
               placeholder="Enter password or your name..."
-              className={"w-full bg-deep-navy/50 border rounded-xl py-4 pl-12 pr-4 text-white placeholder-pale-blue/40 focus:outline-none focus:border-sky-blue focus:ring-1 focus:ring-sky-blue transition-colors font-body " + (error ? 'border-red-500/50' : 'border-sky-blue/30')}
+              className={"w-full bg-white/10 backdrop-blur-xl backdrop-blur-3xl border-t border-sky-blue/10/50 border rounded-xl py-4 pl-12 pr-4 text-white placeholder-pale-blue/40 focus:outline-none focus:border-sky-blue focus:ring-1 focus:ring-sky-blue transition-colors font-body " + (error ? 'border-red-500/50' : 'border-sky-blue/30')}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />

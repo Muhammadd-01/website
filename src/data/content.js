@@ -274,7 +274,6 @@ export const futurePlans = {
 export const navItems = [
   { id: "intro", label: "Our Story", href: "#intro" },
   { id: "apology", label: "My Apology", href: "#apology" },
-  { id: "memories", label: "Memories", href: "#memories" },
   { id: "future", label: "Our Future", href: "#future" },
   { id: "promise", label: "My Promise", href: "#promise" },
   { id: "letter", label: "Letter", href: "#letter" },

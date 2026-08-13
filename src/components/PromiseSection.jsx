@@ -6,7 +6,7 @@ export default function PromiseSection() {
   const icons = [Ear, MessageSquare, Heart, RefreshCw, Users];
 
   return (
-    <div className="relative py-24 bg-midnight overflow-hidden">
+    <div className="relative py-24 bg-transparent overflow-hidden">
       <div 
         className="absolute inset-0 z-0 opacity-10 pointer-events-none"
         style={{
@@ -39,7 +39,7 @@ export default function PromiseSection() {
                 whileInView={{ opacity: 1, y: 0, rotate: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}
                 viewport={{ once: true, margin: "-50px" }}
-                className="group relative bg-deep-navy/40 backdrop-blur-md rounded-2xl p-8 border border-sky-900/30 hover:border-sky-400/50 transition-all duration-500 overflow-hidden"
+                className="group relative bg-white/10 backdrop-blur-xl backdrop-blur-3xl border-t border-sky-blue/10/40 backdrop-blur-md rounded-2xl p-8 border border-sky-900/30 hover:border-sky-400/50 transition-all duration-500 overflow-hidden"
               >
                 <div className="absolute top-4 right-4 text-6xl font-display text-sky-900/10 font-bold pointer-events-none transition-all duration-500 group-hover:text-sky-800/20">
                   {numStr}

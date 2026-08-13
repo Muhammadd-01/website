@@ -98,7 +98,7 @@ export default function Navbar() {
                       href={`#${item.id}`}
                       onClick={(e) => scrollToSection(e, item.id)}
                       className={`text-base tracking-wide transition-all duration-300 w-full text-center py-3 ${
-                        activeSection === item.id ? 'text-white text-glow bg-white/5' : 'text-pale-blue/70'
+                        activeSection === item.id ? 'text-white text-glow bg-white/10 backdrop-blur-xl' : 'text-pale-blue/70'
                       }`}
                     >
                       <span className="mr-2 opacity-50">♡</span>

@@ -12,11 +12,10 @@ import MeaningSection from './components/MeaningSection'
 import HeartInteraction from './components/HeartInteraction'
 import PromiseSection from './components/PromiseSection'
 import FutureTogether from './components/FutureTogether'
-import MemoryGallery from './components/MemoryGallery'
 import LoveLetter from './components/LoveLetter'
 import ForgivenessQuestion from './components/ForgivenessQuestion'
 import FinalMessage from './components/FinalMessage'
-import Background3D from './components/Background3D'
+import BackgroundEffects from './components/BackgroundEffects'
 import MusicToggle from './components/MusicToggle'
 import CustomCursor from './components/CustomCursor'
 import SectionTransition from './components/SectionTransition'
@@ -61,18 +60,22 @@ export default function App() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.1 }}
         >
-          <Background3D />
+          <BackgroundEffects />
           <Navbar />
           <MusicToggle />
 
           <main>
             <Hero />
 
-            <SectionTransition variant="glow" />
-            <ApologyIntro />
+            <div id="intro">
+              <SectionTransition variant="glow" />
+              <ApologyIntro />
+            </div>
 
-            <SectionTransition variant="hearts" />
-            <ApologyCards />
+            <div id="apology">
+              <SectionTransition variant="hearts" />
+              <ApologyCards />
+            </div>
 
             <SectionTransition variant="stars" />
             <Timeline />
@@ -89,17 +92,20 @@ export default function App() {
             <SectionTransition variant="stars" />
             <HeartInteraction />
 
-            <SectionTransition variant="glow" />
-            <PromiseSection />
+            <div id="promise">
+              <SectionTransition variant="glow" />
+              <PromiseSection />
+            </div>
 
-            <SectionTransition variant="hearts" />
-            <MemoryGallery />
+            <div id="future">
+              <SectionTransition variant="glow" />
+              <FutureTogether />
+            </div>
 
-            <SectionTransition variant="glow" />
-            <FutureTogether />
-
-            <SectionTransition variant="wave" />
-            <LoveLetter />
+            <div id="letter">
+              <SectionTransition variant="wave" />
+              <LoveLetter />
+            </div>
 
             <SectionTransition variant="hearts" />
             <ForgivenessQuestion />

@@ -65,7 +65,7 @@ export default function QuoteCarousel() {
       </div>
 
       <div className="relative p-[2px] rounded-3xl overflow-hidden bg-gradient-to-r from-sky-blue/30 via-lavender-blue/30 to-sky-blue/30 animate-gradient-shift bg-[length:200%_auto]">
-        <div className="relative bg-midnight/80 backdrop-blur-xl rounded-[23px] px-8 py-12 md:py-20 md:px-16 min-h-[400px] flex items-center justify-center border border-white/5">
+        <div className="relative bg-transparent/80 backdrop-blur-xl rounded-[23px] px-8 py-12 md:py-20 md:px-16 min-h-[400px] flex items-center justify-center border border-white/5">
           
           <div className="absolute top-8 left-8 opacity-20 origin-center animate-[spin_30s_linear_infinite]">
             <Quote size={80} className="text-sky-blue" />
@@ -84,20 +84,20 @@ export default function QuoteCarousel() {
                 className="absolute w-full text-center px-4"
               >
                 <p className="font-display text-3xl md:text-5xl text-white mb-6 leading-relaxed">
-                  "{" + loveQuotes[currentIndex].text + "}"
+                  {'"' + loveQuotes[currentIndex].text + '"'}
                 </p>
                 <p className="font-script text-xl md:text-3xl text-sky-blue/80">
-                  - {" + loveQuotes[currentIndex].author + "}
+                  - {loveQuotes[currentIndex].author}
                 </p>
               </motion.div>
             </AnimatePresence>
           </div>
 
-          <button onClick={prevQuote} className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/5 hover:bg-white/10 text-white/50 hover:text-white transition-all active:scale-95 group">
+          <button onClick={prevQuote} className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 backdrop-blur-xl hover:bg-white/10 text-white/50 hover:text-white transition-all active:scale-95 group">
             <ChevronLeft size={24} className="group-active:scale-90 transition-transform" />
           </button>
           
-          <button onClick={nextQuote} className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/5 hover:bg-white/10 text-white/50 hover:text-white transition-all active:scale-95 group">
+          <button onClick={nextQuote} className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 backdrop-blur-xl hover:bg-white/10 text-white/50 hover:text-white transition-all active:scale-95 group">
             <ChevronRight size={24} className="group-active:scale-90 transition-transform" />
           </button>
         </div>

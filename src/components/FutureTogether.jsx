@@ -11,7 +11,7 @@ const iconMap = {
 
 const FutureTogether = () => {
   return (
-    <section id="future" className="py-32 px-4 relative bg-deep-navy overflow-hidden">
+    <section id="future" className="py-32 px-4 relative bg-white/10 backdrop-blur-xl backdrop-blur-3xl border-t border-sky-blue/10 overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 opacity-10 bg-grid-pattern pointer-events-none" />
       <div className="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">
@@ -46,7 +46,7 @@ const FutureTogether = () => {
             return (
               <motion.div
                 key={index}
-                className="animated-border relative bg-white/5 backdrop-blur-md border border-sky-blue/20 rounded-2xl p-8 group overflow-hidden"
+                className="animated-border relative bg-white/10 backdrop-blur-xl backdrop-blur-md border border-sky-blue/20 rounded-2xl p-8 group overflow-hidden"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

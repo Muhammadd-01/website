@@ -5,7 +5,7 @@ const Timeline = () => {
   const titleWords = "Our Journey".split(' ');
 
   return (
-    <section className="relative py-32 bg-midnight overflow-hidden">
+    <section className="relative py-32 bg-transparent overflow-hidden">
       {/* Background vertical light ray */}
       <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-48 bg-gradient-to-b from-transparent via-sky-blue/[0.03] to-transparent pointer-events-none" />
 
@@ -44,7 +44,7 @@ const Timeline = () => {
               const stepNumber = index < 9 ? '0' + (index + 1) : String(index + 1);
 
               return (
-                <div key={index} className={"relative flex items-center md:justify-between " + (isEven ? "flex-row-reverse md:flex-row" : "flex-row md:flex-row-reverse")}>
+                <div key={index} className={"relative flex items-center md:justify-between flex-col md:flex-row " + (isEven ? "md:flex-row" : "md:flex-row-reverse")}>
                   
                   {/* Spacer for alternating layout on desktop */}
                   <div className="hidden md:block md:w-5/12" />
@@ -90,10 +90,10 @@ const Timeline = () => {
                       {stepNumber}
                     </div>
 
-                    <div className="relative p-[1px] rounded-2xl bg-deep-navy overflow-hidden z-10">
+                    <div className="relative p-[1px] rounded-2xl bg-white/10 backdrop-blur-xl backdrop-blur-3xl border-t border-sky-blue/10 overflow-hidden z-10">
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-sky-blue/20 to-transparent group-hover:opacity-100 opacity-0 transition-opacity duration-500 animate-gradient-shift" />
                       
-                      <div className="relative bg-deep-navy/90 backdrop-blur-sm p-8 rounded-2xl h-full border border-white/5">
+                      <div className="relative bg-white/10 backdrop-blur-xl backdrop-blur-3xl border-t border-sky-blue/10/90 backdrop-blur-sm p-8 rounded-2xl h-full border border-white/5">
                         <span className="text-sky-blue font-body text-sm font-medium tracking-wider uppercase mb-2 block">
                           {item.date}
                         </span>

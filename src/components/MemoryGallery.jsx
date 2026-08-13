@@ -58,7 +58,7 @@ const MemoryGallery = () => {
             whileHover={{ y: -4, rotate: 1 }}
             className="glass-card overflow-hidden rounded-2xl group transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:border-electric-blue/50"
           >
-            <div className="aspect-[4/3] w-full relative overflow-hidden bg-deep-navy/50">
+            <div className="aspect-[4/3] w-full relative overflow-hidden bg-white/10 backdrop-blur-xl backdrop-blur-3xl border-t border-sky-blue/10/50">
               {failedImages[memory.id] ? (
                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-deep-navy to-midnight p-4">
                   <Camera className="w-10 h-10 text-pale-blue/20 mb-2" />
