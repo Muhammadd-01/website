@@ -6,6 +6,7 @@ import { loveConfig } from '../data/content.js'
 export default function WelcomeGate({ onEnter }) {
   const [password, setPassword] = useState('');
   const [isUnlocking, setIsUnlocking] = useState(false);
+  const [error, setError] = useState(false);
   const correctPassword = loveConfig.specialDate ? loveConfig.specialDate.replace(/\D/g, '') : '1234';
 
   const handleSubmit = (e) => {
