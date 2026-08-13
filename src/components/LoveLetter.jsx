@@ -30,38 +30,71 @@ const LoveLetter = () => {
               transition={{ duration: 0.8 }}
             >
               <motion.div
-                className="relative cursor-pointer group w-80 h-56 perspective-1000"
+                className="relative cursor-pointer group w-80 h-56"
+                style={{ perspective: "1500px" }}
                 onClick={handleOpen}
-                whileHover={{ scale: 1.05, rotate: [-1, 1, -1] }}
+                whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.5 }}
               >
-                {/* Envelope Body */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A] to-[#1E293B] rounded-lg shadow-2xl border border-sky-blue/20 overflow-hidden">
-                  {/* Subtle paper texture */}
-                  <div className="absolute inset-0 opacity-5 paper-texture" />
-                  
-                  {/* Envelope seams */}
-                  <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 320 224" preserveAspectRatio="none">
-                    <path d="M0 0 L160 112 L320 0" stroke="#60A5FA" strokeWidth="1" fill="none" />
-                    <path d="M0 224 L160 112 L320 224" stroke="#60A5FA" strokeWidth="1" fill="none" />
-                  </svg>
-                </div>
-
-                {/* Wax Seal */}
+                {/* Back of Envelope */}
+                <div className="absolute inset-0 bg-[#0a1128] rounded-lg border border-sky-blue/20" />
+                
+                {/* The Letter inside the envelope */}
                 <motion.div 
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
-                  animate={isOpen ? { scale: 0, opacity: 0 } : { scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.4 }}
+                  className="absolute inset-x-2 top-2 bottom-2 bg-gradient-to-b from-[#e2e8f0] to-[#f8fafc] rounded flex flex-col items-center p-4 border border-sky-blue/30"
+                  initial={{ y: 0, zIndex: 10 }}
+                  animate={isOpen ? { y: -100, zIndex: 25, opacity: 0 } : { y: 0, zIndex: 10, opacity: 1 }}
+                  transition={{ delay: isOpen ? 0.4 : 0, duration: 0.8, ease: "easeOut" }}
                 >
-                  <div className="wax-seal group-hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.6)] transition-all duration-300">
+                  <div className="w-full h-2 bg-sky-blue/20 rounded-full mb-2" />
+                  <div className="w-3/4 h-2 bg-sky-blue/20 rounded-full mb-2" />
+                  <div className="w-5/6 h-2 bg-sky-blue/20 rounded-full" />
+                </motion.div>
+
+                {/* Left Side Flap */}
+                <div 
+                  className="absolute inset-0 bg-[#0f172a] rounded-lg z-20 border-l border-sky-blue/20"
+                  style={{ clipPath: "polygon(0 0, 50% 50%, 0 100%)" }}
+                />
+                
+                {/* Right Side Flap */}
+                <div 
+                  className="absolute inset-0 bg-[#0f172a] rounded-lg z-20 border-r border-sky-blue/20"
+                  style={{ clipPath: "polygon(100% 0, 50% 50%, 100% 100%)" }}
+                />
+                
+                {/* Bottom Flap */}
+                <div 
+                  className="absolute inset-0 bg-[#1e293b] rounded-lg z-20 border-b border-sky-blue/20 drop-shadow-xl"
+                  style={{ clipPath: "polygon(0 100%, 50% 50%, 100% 100%)" }}
+                />
+
+                {/* Top Flap (Hinged) */}
+                <motion.div 
+                  className="absolute top-0 left-0 right-0 h-full origin-top z-30"
+                  initial={{ rotateX: 0 }}
+                  animate={isOpen ? { rotateX: 180, zIndex: 5 } : { rotateX: 0, zIndex: 30 }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                >
+                  <div 
+                    className="absolute inset-0 bg-[#1e293b] rounded-t-lg border-t border-sky-blue/30"
+                    style={{ clipPath: "polygon(0 0, 100% 0, 50% 50%)" }}
+                  />
+                  
+                  {/* Wax Seal placed EXACTLY at the 50% 50% tip of the top flap */}
+                  <motion.div 
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 wax-seal group-hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.8)] transition-all duration-300"
+                    animate={isOpen ? { opacity: 0, scale: 0 } : { opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
                     <Heart className="w-5 h-5 text-white/90" fill="currentColor" />
-                  </div>
+                  </motion.div>
                 </motion.div>
 
                 {/* Click to open text */}
                 <motion.p 
-                  className="absolute -bottom-16 left-0 w-full text-center text-sky-blue/60 font-body text-sm tracking-widest uppercase"
-                  animate={{ opacity: [0.4, 1, 0.4] }}
+                  className="absolute -bottom-16 left-0 w-full text-center text-sky-blue/60 font-body text-sm tracking-widest uppercase pointer-events-none"
+                  animate={isOpen ? { opacity: 0 } : { opacity: [0.4, 1, 0.4] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
                   {'💌 Click to open 💌'}
