@@ -88,7 +88,7 @@ const BackgroundEffects = () => {
             top: h.y + '%',
             '--rot-start': h.rotationStart + 'deg',
             '--rot-end': h.rotationEnd + 'deg',
-            animation: \`fall-and-spin \${h.duration}s linear \${h.delay}s infinite\`,
+            animation: `fall-and-spin ${h.duration}s linear ${h.delay}s infinite`,
           }}
         >
           {h.emoji}
